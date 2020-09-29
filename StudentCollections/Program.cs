@@ -118,6 +118,10 @@ namespace StudentCollections
                                 int identification = InputInfo.InputInt();
                                 Student m = (Student)students[identification];
                                 m.Display();
+                                foreach(Student s in students)
+                                {
+                                    showstudents.AddLast(s);
+                                }
                                 Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
                                 int select3 = InputInfo.InputNavigate2();
                                 switch (select3)
@@ -164,6 +168,26 @@ namespace StudentCollections
                                 int identification = InputInfo.InputInt();
                                 Aspirant z = (Aspirant)aspirants[identification];
                                 z.Display();
+                                foreach (Aspirant a in aspirants)
+                                {
+                                    showaspirants.AddLast(a);
+                                }
+                                Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
+                                int select3 = InputInfo.InputNavigate2();
+                                switch (select3)
+                                {
+                                    case 1:
+                                        {
+
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+
+                                            break;
+                                        }
+
+                                }
                             }
 
                             Console.WriteLine("Для возврата в главное меню нажмите нажмите - 1, для того, чтобы выйти -  2.");
