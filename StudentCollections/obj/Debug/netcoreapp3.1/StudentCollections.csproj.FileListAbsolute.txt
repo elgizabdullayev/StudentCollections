@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.exe
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.deps.json
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.runtimeconfig.json
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.runtimeconfig.dev.json
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.dll
+C:\Users\User\source\repos\StudentCollections\StudentCollections\bin\Debug\netcoreapp3.1\StudentCollections.pdb
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.csprojAssemblyReference.cache
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.AssemblyInfo.cs
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.dll
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.pdb
+C:\Users\User\source\repos\StudentCollections\StudentCollections\obj\Debug\netcoreapp3.1\StudentCollections.genruntimeconfig.cache
