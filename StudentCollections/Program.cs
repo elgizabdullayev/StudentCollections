@@ -13,7 +13,9 @@ namespace StudentCollections
             ArrayList students = new ArrayList();
             ArrayList aspirants = new ArrayList();
             LinkedList<Student> showstudents = new LinkedList<Student>();
+            LinkedListNode<Student> student;
             LinkedList<Aspirant> showaspirants = new LinkedList<Aspirant>();
+            LinkedListNode<Aspirant> aspirant;
             int count1 = 0;
             int count2 = 0;
             bool Exit = false;
@@ -105,43 +107,120 @@ namespace StudentCollections
                                 {
                                     s.Display();
                                 }
+                                Console.WriteLine("Хотите показать студента по его индексу? Введите 1 - если да, 2 - если нет.");
+                                int select = InputInfo.InputNavigate2();
+                                if (select == 1)
+                                {
+                                    Console.WriteLine("Для этого введите индекс.");
+                                    int identification = InputInfo.InputInt();
+                                 
+                                        
+                                        if (identification < students.Count)
+                                        {
+                                            Student m = (Student)students[identification];
+                                            m.Display();
+                                            foreach (Student s in students)
+                                            {
+                                                showstudents.AddLast(s);
+                                            }
+                                            if (identification > 0)
+                                            {
+                                                Student n = (Student)students[identification];
+                                                Student d = (Student)students[identification];
+
+                                                if (showstudents.Contains(m))
+                                                {
+
+                                                    student = showstudents.AddLast(m);
+                                                    showstudents.AddLast(d);
+                                                    showstudents.AddFirst(n);
+                                                    Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
+                                                    int select3 = InputInfo.InputNavigate2();
+                                                    switch (select3)
+                                                    {
+                                                        case 1:
+                                                            {
+                                                                if (student.Previous.Value != null)
+                                                                {
+                                                                    student.Previous.Value.Display();
+                                                                    break;
+                                                                }
+                                                                else if (student.Previous.Value == null)
+                                                                {
+                                                                    Console.WriteLine("Данных нет.");
+                                                                }
+                                                                else
+                                                                {
+                                                                    Console.WriteLine("Произошла ошибка.");
+                                                                    break;
+                                                                }
+                                                                break;
+                                                            }
+                                                        case 2:
+                                                            {
+
+                                                                if (student.Next.Value != null)
+                                                                {
+                                                                    student.Next.Value.Display();
+                                                                    break;
+                                                                }
+                                                                else if (student.Next.Value == null)
+                                                                {
+                                                                    Console.WriteLine("Данных нет.");
+                                                                }
+                                                                else
+                                                                {
+                                                                    Console.WriteLine("Произошла ошибка.");
+                                                                    break;
+                                                                }
+                                                                break;
+                                                            }
+
+                                                    }
+                                                }
+                                                if (identification == 0)
+                                                {
+                                                    Student z = (Student)students[identification + 1];
+                                                    student = showstudents.AddLast(m);
+                                                    showstudents.AddLast(z);
+                                                    Console.WriteLine("Показать следую студента - 1");
+                                                    int select3 = InputInfo.InputNavigate2();
+                                                    if (student.Next.Value != null)
+                                                    {
+                                                        student.Next.Value.Display();
+                                                        break;
+                                                    }
+                                                    else if (student.Next.Value == null)
+                                                    {
+                                                        Console.WriteLine("Данных нет.");
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Произошла ошибка.");
+                                                        break;
+                                                    }
+                                                    break;
+                                                }
+
+                                                
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Студента под этим индексом не существует.");
+                                        }
+                                    
+                              
+                                 }
                             }
                             else
                             {
                                 Console.WriteLine("База пустая.");
                             }
-                            Console.WriteLine("Хотите показать студента по его индексу? Введите 1 - если да, 2 - если нет.");
-                            int select = InputInfo.InputNavigate2();
-                            if (select == 1)
-                            {
-                                Console.WriteLine("Для этого введите индекс.");
-                                int identification = InputInfo.InputInt();
-                                Student m = (Student)students[identification];
-                                m.Display();
-                                foreach(Student s in students)
-                                {
-                                    showstudents.AddLast(s);
-                                }
-                                Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
-                                int select3 = InputInfo.InputNavigate2();
-                                switch (select3)
-                                {
-                                    case 1:
-                                        {
-
-                                            break;
-                                        }
-                                    case 2:
-                                        {
-
-                                            break;
-                                        }
-
-                                }
-                            }
+                            
                             Console.WriteLine("Для возврата в главное меню нажмите нажмите - 1, для того, чтобы выйти -  2.");
                             int select2 = InputInfo.InputNavigate2();
-                            if (select == 2)
+                            if (select2 == 2)
                             {
                                 Exit = true;
                             }
@@ -155,46 +234,119 @@ namespace StudentCollections
                                 {
                                     a.Display();
                                 }
-                            }
-                            else
+                                Console.WriteLine("Хотите показать аспиранта по его индексу? Введите 1 - если да, 2 - если нет.");
+                                int select = InputInfo.InputNavigate2();
+                                if (select == 1)
+                                {
+                                    Console.WriteLine("Для этого введите индекс аспиранта.");
+                                    int identification = InputInfo.InputInt();
+                                    if (identification < aspirants.Count)
+                                    {
+                                        Aspirant z = (Aspirant)aspirants[identification];
+                                        z.Display();
+                                        foreach (Aspirant a in aspirants)
+                                        {
+                                            showaspirants.AddLast(a);
+                                        }
+                                        if (identification > 0)
+                                        {
+                                            Aspirant n = (Aspirant)aspirants[identification - 1];
+                                            Aspirant d = (Aspirant)aspirants[identification + 1];
+
+                                            if (showaspirants.Contains(z))
+                                            {
+
+                                                aspirant = showaspirants.AddLast(z);
+                                                showaspirants.AddLast(d);
+                                                showaspirants.AddFirst(n);
+                                                Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
+                                                int select3 = InputInfo.InputNavigate2();
+                                                switch (select3)
+                                                {
+                                                    case 1:
+                                                        {
+                                                            if (aspirant.Previous.Value != null)
+                                                            {
+                                                                aspirant.Previous.Value.Display();
+                                                                break;
+                                                            }
+                                                            else if (aspirant.Previous.Value == null)
+                                                            {
+                                                                Console.WriteLine("Данных нет.");
+                                                            }
+                                                            else
+                                                            {
+                                                                Console.WriteLine("Произошла ошибка.");
+                                                                break;
+                                                            }
+                                                            break;
+                                                        }
+                                                    case 2:
+                                                        {
+
+                                                            if (aspirant.Next.Value != null)
+                                                            {
+                                                                aspirant.Next.Value.Display();
+                                                                break;
+                                                            }
+                                                            else if (aspirant.Next.Value == null)
+                                                            {
+                                                                Console.WriteLine("Данных нет.");
+                                                            }
+                                                            else
+                                                            {
+                                                                Console.WriteLine("Произошла ошибка.");
+                                                                break;
+                                                            }
+                                                            break;
+                                                        }
+
+                                                }
+                                            }
+                                            if (identification == 0)
+                                            {
+                                                Aspirant l = (Aspirant)aspirants[identification + 1];
+                                                aspirant = showaspirants.AddLast(z);
+                                                showaspirants.AddLast(l);
+                                                Console.WriteLine("Показать следую студента - 1");
+                                                int select3 = InputInfo.InputNavigate2();
+                                                if (aspirant.Next.Value != null)
+                                                {
+                                                    aspirant.Next.Value.Display();
+                                                    break;
+                                                }
+                                                if (aspirant.Next.Value == null)
+                                                {
+                                                    Console.WriteLine("Данных нет.");
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("Произошла ошибка.");
+                                                    break;
+                                                }
+                                                break;
+                                            }
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Аспиранта под этим индексом не существует.");
+                                    }
+
+                                }
+                                else
                             {
                                 Console.WriteLine("База пустая.");
                             }
-                            Console.WriteLine("Хотите показать аспиранта по его индексу? Введите 1 - если да, 2 - если нет.");
-                            int select = InputInfo.InputNavigate2();
-                            if (select == 1)
-                            {
-                                Console.WriteLine("Для этого введите индекс аспиранта.");
-                                int identification = InputInfo.InputInt();
-                                Aspirant z = (Aspirant)aspirants[identification];
-                                z.Display();
-                                foreach (Aspirant a in aspirants)
+                            
+                                Console.WriteLine("Для возврата в главное меню нажмите нажмите - 1, для того, чтобы выйти -  2.");
+                                int select1 = InputInfo.InputNavigate2();
+                                if (select1 == 2)
                                 {
-                                    showaspirants.AddLast(a);
+                                    Exit = true;
                                 }
-                                Console.WriteLine("Показать предыдущего студента - 1 , показать следующего студента - 2.");
-                                int select3 = InputInfo.InputNavigate2();
-                                switch (select3)
-                                {
-                                    case 1:
-                                        {
-
-                                            break;
-                                        }
-                                    case 2:
-                                        {
-
-                                            break;
-                                        }
-
-                                }
-                            }
-
-                            Console.WriteLine("Для возврата в главное меню нажмите нажмите - 1, для того, чтобы выйти -  2.");
-                            int select1 = InputInfo.InputNavigate2();
-                            if (select1 == 2)
-                            {
-                                Exit = true;
+                                break;
                             }
                             break;
                         }
